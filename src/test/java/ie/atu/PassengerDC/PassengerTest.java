@@ -38,6 +38,18 @@ class PassengerTest {
         Exception exMessage = assertThrows(IllegalArgumentException.class, ()-> {new Passenger("Mr", "De", "12345678910", "12345678", 20);});
         assertEquals("Name must be a minimum of 3 characters", exMessage.getMessage());
     }
+
+    @Test
+    void testIDSuccess(){
+        Passenger pass1 = new Passenger("Mr", "Denis", "12345678910", "12345678", 20);
+        assertEquals("12345678910", pass1.getID());
+    }
+
+    @Test
+    void testIDFailure(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, ()-> {new Passenger("Mr", "Denis", "12345", "12345678", 20);});
+        assertEquals("ID must be a minimum of 10 characters", exMessage.getMessage());
+    }
     @AfterEach
     void tearDown() {
     }
