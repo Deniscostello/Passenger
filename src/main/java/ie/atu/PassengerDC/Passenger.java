@@ -11,7 +11,7 @@ public class Passenger {
         setTitle(title);
         setName(Name);
         setID(ID);
-        this.Phone = Phone;
+        setPhone(Phone);
         this.Age = Age;
     }
 
@@ -54,6 +54,20 @@ public class Passenger {
         }
         else{
             throw new IllegalArgumentException("ID must be a minimum of 10 characters");
+        }
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        int phoneSize = phone.length();
+        if(phoneSize > 6) {
+            Phone = phone;
+        }
+        else{
+            throw new IllegalArgumentException("Phone number must be 7 characters minimum");
         }
     }
 }
