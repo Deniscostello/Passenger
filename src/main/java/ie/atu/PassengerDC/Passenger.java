@@ -9,10 +9,25 @@ public class Passenger {
 
     public Passenger(String title, String Name, String ID, String Phone, int Age){
         setTitle(title);
-        this.Name = Name;
+        setName(Name);
         this.ID = ID;
         this.Phone = Phone;
         this.Age = Age;
+    }
+
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        int nameSize = name.length();
+        if(nameSize > 2){
+            Name = name;
+        }
+        else{
+            throw new IllegalArgumentException("Name must be a minimum of 3 characters");
+        }
     }
 
     public String getTitle() {
