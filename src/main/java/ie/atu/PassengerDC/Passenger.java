@@ -10,7 +10,7 @@ public class Passenger {
     public Passenger(String title, String Name, String ID, String Phone, int Age){
         setTitle(title);
         setName(Name);
-        this.ID = ID;
+        setID(ID);
         this.Phone = Phone;
         this.Age = Age;
     }
@@ -40,6 +40,20 @@ public class Passenger {
         }
        else{
            throw new IllegalArgumentException("Please enter 'Mr' , 'Mrs' or 'Ms' ");
+        }
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        int idSize = ID.length();
+        if(idSize > 9){
+            this.ID = ID;
+        }
+        else{
+            throw new IllegalArgumentException("ID must be a minimum of 10 characters");
         }
     }
 }
