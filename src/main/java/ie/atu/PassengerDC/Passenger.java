@@ -12,7 +12,7 @@ public class Passenger {
         setName(Name);
         setID(ID);
         setPhone(Phone);
-        this.Age = Age;
+        setAge(Age);
     }
 
 
@@ -68,6 +68,19 @@ public class Passenger {
         }
         else{
             throw new IllegalArgumentException("Phone number must be 7 characters minimum");
+        }
+    }
+
+    public int getAge() {
+        return Age;
+    }
+
+    public void setAge(int age) {
+        if(age > 16) {
+            Age = age;
+        }
+        else{
+            throw new IllegalArgumentException("Must be over 16 to fly");
         }
     }
 }

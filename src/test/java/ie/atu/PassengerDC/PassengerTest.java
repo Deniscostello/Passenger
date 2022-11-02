@@ -4,12 +4,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PassengerTest {
-    Passenger pass1;
+    //Passenger pass1;
 
     @BeforeEach
     void setUp() {
@@ -63,6 +62,17 @@ class PassengerTest {
         assertEquals("Phone number must be 7 characters minimum", exMessage.getMessage());
     }
 
+    @Test
+    void testAgeSuccess(){
+        Passenger pass1 = new Passenger("Mr", "Denis", "12345678910", "12345678",20);
+        assertEquals(20, pass1.getAge());
+    }
+
+    @Test
+    void testAgeFailure(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, ()-> {new Passenger("Mr", "Denis", "12345678910", "12345678", 2);});
+        assertEquals("Must be over 16 to fly", exMessage.getMessage());
+    }
     @AfterEach
     void tearDown() {
     }
