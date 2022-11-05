@@ -51,10 +51,10 @@ public class Passenger {
         return ID;
     }
 
-    public void setID(String ID) {
-        int idSize = ID.length();
+    public void setID(String id) {
+        int idSize = id.length();
         if(idSize > 9){
-            this.ID = ID;
+            ID = id;
         }
         else{
             throw new IllegalArgumentException("ID must be a minimum of 10 characters");
