@@ -1,12 +1,14 @@
 package ie.atu.PassengerDC;
 
 public class Passenger {
+    //instance variables
     private String Title;
     private String Name;
     private String ID;
     private String Phone;
     private int Age;
 
+    //Passenger constructor
     public Passenger(String title, String Name, String ID, String Phone, int Age){
         setTitle(title);
         setName(Name);
@@ -15,7 +17,7 @@ public class Passenger {
         setAge(Age);
     }
 
-
+    //Name get and set method
     public String getName() {
         return Name;
     }
@@ -30,6 +32,7 @@ public class Passenger {
         }
     }
 
+    //Title get and set method
     public String getTitle() {
         return Title;
     }
@@ -43,6 +46,7 @@ public class Passenger {
         }
     }
 
+    //ID get and set method
     public String getID() {
         return ID;
     }
@@ -57,6 +61,7 @@ public class Passenger {
         }
     }
 
+    //Phone get and set method
     public String getPhone() {
         return Phone;
     }
@@ -71,6 +76,7 @@ public class Passenger {
         }
     }
 
+    //Age get and set method
     public int getAge() {
         return Age;
     }
