@@ -31,6 +31,7 @@ class PassengerTest {
         Passenger pass2 = new Passenger("Mrs", "Kate", "9876543210", "87654321", 50);
         assertEquals("Kate", pass2.getName());
     }
+    //Added name failure test
     @Test
     void testNameFailure(){
         Exception exMessage = assertThrows(IllegalArgumentException.class, ()-> new Passenger("Mrs", "Ka", "9876543210", "87654321", 50));
